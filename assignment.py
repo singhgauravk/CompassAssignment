@@ -22,7 +22,6 @@ def getCommitDateList(userName, authToken):
 	gitUser = g.get_user() # get User Object using the Personal Access Token
 	repos = gitUser.get_repos()	
 	for repoIter in repos: #get all repositories for the user
-		print(repoIter.size)
 		for commitIter in repoIter.get_commits(): #Iterate through all commits on the repository
 			if(commitIter.commit.author.name ==userName): #Filter on username
 				commitDateList.append(commitIter.commit.author.date) #Append to collection
@@ -54,7 +53,6 @@ def processCommitData(commitDateList):
 		for commitDate in commitDateList[:60]: #slice collection to consider only first 60 elements
 			if(prevTime != 0):
 				timeDiff = abs((prevTime - commitDate).seconds) # get the difference from the previous commit in seconds
-				print(prevTime, commitDate, timeDiff)
 				sumOfTimeDiff = sumOfTimeDiff + timeDiff
 			else:
 				prevTime = commitDate
