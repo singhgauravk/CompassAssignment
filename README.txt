@@ -1,4 +1,4 @@
-Please note that I have written the login using Python. To run the program you need can execute on a command shell (assuming python is already installed) using the command:
+Please note that I have written the logic using Python. To run the program you need can execute on a command shell (assuming python and required packages are already installed) using the command:
 CMD > python assignment.py
 
 In case python is not installed, please download and install from https://www.python.org/downloads/
