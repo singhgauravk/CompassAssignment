@@ -54,8 +54,7 @@ def processCommitData(commitDateList):
 			if(prevTime != 0):
 				timeDiff = abs((prevTime - commitDate).seconds) # get the difference from the previous commit in seconds
 				sumOfTimeDiff = sumOfTimeDiff + timeDiff
-			else:
-				prevTime = commitDate
+			prevTime = commitDate
 			commitCount = commitCount + 1
 		averageDiffInSeconds = sumOfTimeDiff/commitCount
 		return averageDiffInSeconds
